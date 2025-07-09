@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Fire Diamond Generator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #0e0e0e;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      padding: 40px 20px;
+    }
+    input, select {
+      padding: 10px;
+      margin: 10px auto;
+      width: 90%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      display: block;
+    }
+    .btn, .btn-disabled {
+      background: #00ff91;
+      color: black;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-disabled {
+      background: gray;
+      cursor: not-allowed;
+    }
+    #progressBox {
+      display: none;
+      margin-top: 30px;
+    }
+    footer {
+      margin-top: 40px;
+      color: #888;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 Free Fire Diamond Generator</h1>
+    <input type="text" id="uid" placeholder="Enter your Free Fire UID" />
+    <div id="shareInfo">
+      You must share this site with 20 friends to unlock the claim button.<br>
+      Shares: <span id="shareCount">0</span>/20
+    </div>
+    <button class="btn" onclick="share()">Share Now</button>
+    <button id="claimBtn" class="btn-disabled" onclick="start()" disabled>Claim 500 Diamonds</button>
+    
+    <div id="progressBox">
+      <p id="status">Processing...</p>
+    </div>
+
+    <footer>
+      Powered by Garena™ | This is a fan-made site
+    </footer>
+  </div>
+
+  <script>
+    let shareCount = 0;
+
+    function share() {
+      shareCount++;
+      document.getElementById("shareCount").innerText = shareCount;
+      if (shareCount >= 20) {
+        let btn = document.getElementById("claimBtn");
+        btn.disabled = false;
+        btn.classList.remove("btn-disabled");
+        btn.classList.add("btn");
+        document.getElementById("shareInfo").innerText = "✅ Share complete! You can now claim 500 Diamonds.";
+      }
+    }
+
+    function start() {
+      let uid = document.getElementById("uid").value;
+      if (uid.length < 5) {
+        alert("Please enter a valid UID");
+        return;
+      }
+
+      let status = document.getElementById("status");
+      let box = document.getElementById("progressBox");
+      box.style.display = "block";
+
+      let steps = [
+        "Connecting to Garena server...",
+        "Verifying UID...",
+        "Generating 500 Diamonds...",
+        "Sending...",
+        "Please verify you're human to complete process."
+      ];
+
+      let i = 0;
+      let interval = setInterval(() => {
+        status.innerText = steps[i];
+        i++;
+        if (i === steps.length) {
+          clearInterval(interval);
+          window.location.href = "https://www.profitableratecpm.com/aqvf0fv0z1?key=9a79dd5a4ad70fd76ceb696a2ce90701";
+        }
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
